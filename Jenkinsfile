@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         JAVA_HOME = '/usr/lib/jvm/java'
+        
     }
 
     stages {
@@ -13,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                wrap([$class: 'Xvfb', debug: true, displayName: 50]) {
+                wrap([$class: 'Xvfb', debug: true, displayName: 150]) {
                     sh 'mvn test'
                 }
             }
